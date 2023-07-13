@@ -1,0 +1,242 @@
+*{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+#mynavbar {
+  background-color: #353A40;
+}
+
+#logo{
+  width: 7rem;
+}
+
+.navbar-brand{
+  color:white;
+}
+.nav-link {
+  color: #9A9784;
+}
+
+.compra {
+  color: rgb(25, 153, 25);
+  font-weight: 400;
+}
+
+.banner-descripcion{
+  width: 40%;
+  text-align: right;
+  position: relative;
+  padding-right: 5rem;
+}
+
+.texto-descripcion{
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+  background-color:black;
+  color: white;
+  position: relative;
+}
+
+.texto-descripcion::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-image: url("../img/ba1.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+}
+
+/*css card*/
+.contenedor-cards{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card{
+  width: 30%;
+}
+
+.imagen-card {
+  max-height: 23rem;
+  object-fit: cover;
+}
+
+.btn-card{
+  width: auto;
+  font-size: 0.8rem;
+  padding: 0 0.4rem;
+}
+/*fin card*/
+
+/*css carrusel*/
+.card-carrusel{
+  background-color: #353A40;
+  height: 27rem;;
+}
+
+.imagen-carrusel{
+  width: 50%;
+  object-fit: cover;
+}
+
+.texto-carrusel {
+  color: white;
+  width: 50%;
+  padding: 2rem 4rem 1rem 4rem;
+}
+
+/*fin carrusel*/
+
+/*css formulario*/
+.contenedor-form {
+  width: 70%;
+}
+.contenedor-username {
+  display: flex;
+  justify-content: space-between;
+}
+
+.username{
+  width: 49%;
+}
+
+.link-puntos {
+  border-bottom: 0.2rem dotted grey;
+}
+/*fin formulario*/
+
+footer {
+/*  background-color: #1D506D;
+  color: white;*/
+  background: rgb(27,53,66);
+  background: linear-gradient(90deg, rgba(27,53,66,1) 0%, rgba(29,82,113,1) 100%); 
+}
+footer>a{
+  color: white;
+}
+footer>a:hover {
+  color: black;
+}
+
+
+
+@media only screen and (max-width:576px) {
+  #nombre-empresa{
+    display: none;
+  }
+  .banner-descripcion {
+    width: 100%;
+    text-align: center;
+    padding: 3rem;
+  }
+  .btn-text-descr{
+    margin-bottom: 1rem;
+  }
+
+  .contenedor-cards{
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap; 
+    align-items: center;
+    height: auto;
+  }
+  
+  .card {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .card-carrusel{
+    display: flex;
+    flex-direction: column;
+    height: 55rem;
+  }
+
+  .imagen-carrusel{
+    width: 100%;
+    min-height: 20rem;
+  }
+
+  .texto-carrusel{
+    width: 100%;
+  }
+
+  .contenedor-form{
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .contenedor-username {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .username{
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  footer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer>a{
+    margin: .2rem;
+  }
+}
+
+/*----------------compra tickets----------------*/
+
+.navbar-nav .nav-link.active{
+  font-weight: bolder;
+  color: #97C93E;
+}
+.h3-negrita{
+  font-weight: 600;
+}
+
+.btn-compra-ticket {
+  background-color: #97C93E;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.btn-compra-ticket:hover {
+  background-color: rgb(191, 255, 63);
+}
+
+@media only screen and (min-width:577px) and (max-width:768px) {
+  .contenedor-cards{
+    flex-wrap: wrap;
+  }
+  .card{
+    width: 48%;
+    margin-bottom: 1rem;
+  }
+  .imagen-card{
+    height: 20rem;
+  }
+  .card-carrusel{
+    height: 32rem;
+  }
+
+  footer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  footer>a{
+    margin: 0 2rem 1.5rem;
+  }
+}
