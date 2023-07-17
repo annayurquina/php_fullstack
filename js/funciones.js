@@ -61,7 +61,6 @@ function total_pago() {
   let categoria = categoria_ticket.value
   let cantidad = cantidad_ticket.value
   
-  console.log("🚀 ~ file: funciones.js:32 ~ total_pago ~ salida:", salida)
   if (categoria === "regular") {
     salida = salida * cantidad
   }
@@ -74,8 +73,13 @@ function total_pago() {
   if (categoria === "junior") {
     salida = (salida * cantidad) * 0.85
   }
+  console.log(salida)
   mensaje_total.textContent="Total a pagar es: $"+salida
 }
+
+categoria_ticket.addEventListener("change", (event) => {
+  total_pago()
+})
 
 function borrar_form() {
   let formulario = document.getElementById("formulario-ticket")
@@ -84,4 +88,4 @@ function borrar_form() {
   mensaje_total.textContent="Total a pagar es: $200"
 }
 
-total_pago()
+//total_pago()

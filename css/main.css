@@ -118,6 +118,7 @@ footer {
   color: white;*/
   background: rgb(27,53,66);
   background: linear-gradient(90deg, rgba(27,53,66,1) 0%, rgba(29,82,113,1) 100%); 
+  margin-top: auto;
 }
 footer>a{
   color: white;
