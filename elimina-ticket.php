@@ -13,27 +13,26 @@
 <body>
 <?php
 include("./backend/menu.php");
-echo "<p>En archivo datosCompras.php</p>";
+echo "<p>En archivo eliminar-ticket.php</p>";
 echo "<p>Los datos fueron recibidos</p>";
 //echo "<p>Contenido de la variable superglobal: ".$_POST."</p>";
 //print_r($_POST);
-$nombre = $_POST["nombre-ticket"];
-$apellido = $_POST["apellido-ticket"];
-$email = $_POST["email-ticket"];
-$cantidad = $_POST["cantidad-ticket"];
-$categoria = $_POST["categoria-ticket"];
+$id = $_GET["id"];
+
+//echo "<p>id=".$id;
 
 
 //echo '<p>nombre:'.$nombre.'</p>';
 include("./backend/conexion.php");
 try{
-  $sql = "INSERT INTO compra_tickets VALUES(NULL,'$nombre','$apellido','$email','$cantidad','$categoria');";
+  $sql = "DELETE FROM compra_tickets WHERE id='$id';";
   
   $consulta = mysqli_query($conexion,$sql);
   
+  echo "<p>Ticket Eliminado</p>";
   //var_dump($consulta);
 }catch(Exception $error){
-  echo "no pudo guardar cambios";
+  echo "no pudo eliminar";
 }
 
 

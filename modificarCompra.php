@@ -13,10 +13,11 @@
 <body>
 <?php
 include("./backend/menu.php");
-echo "<p>En archivo datosCompras.php</p>";
+echo "<p>En archivo modificarCompra.php</p>";
 echo "<p>Los datos fueron recibidos</p>";
 //echo "<p>Contenido de la variable superglobal: ".$_POST."</p>";
 //print_r($_POST);
+$id = $_POST["id-ticket"];
 $nombre = $_POST["nombre-ticket"];
 $apellido = $_POST["apellido-ticket"];
 $email = $_POST["email-ticket"];
@@ -27,7 +28,7 @@ $categoria = $_POST["categoria-ticket"];
 //echo '<p>nombre:'.$nombre.'</p>';
 include("./backend/conexion.php");
 try{
-  $sql = "INSERT INTO compra_tickets VALUES(NULL,'$nombre','$apellido','$email','$cantidad','$categoria');";
+  $sql = "UPDATE compra_tickets SET nombre='$nombre', apellido='$apellido', email='$email', cantidad='$cantidad',categoria='$categoria' WHERE id='$id';";
   
   $consulta = mysqli_query($conexion,$sql);
   

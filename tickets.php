@@ -20,43 +20,46 @@
 <main>
     <div class="container col-lg-4 text-center my-3">
         <h2>Lista de Tickets Comprados</h2>
-        <a href="modificar.php?id=3"><i class="bi bi-pencil-fill"></i></a>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Ticket</th>
-                    <th scope="col">Acciones</th>
+        <!--a href="modificar.php?id=3"><i class="bi bi-pencil-fill"></i></a-->
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Ticket</th>
+                        <th scope="col" colspan="2">Acciones</th>
 
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-              include("./backend/conexion.php");
-              $sql = "SELECT * FROM compra_tickets";
-              $consulta = mysqli_query($conexion,$sql);
-              if(mysqli_num_rows($consulta)>0){
-                  while($fila=mysqli_fetch_assoc($consulta)){
-                    echo 
-                    "<tr>
-                      <td>".$fila["id"]."</td>
-                      <td>".$fila["nombre"]."</td>
-                      <td>".$fila["apellido"]."</td>
-                      <td>".$fila["email"]."</td>
-                      <td>".$fila["cantidad"]."</td>
-                      <td>".$fila["categoria"]."</td>
-                      <td>".$fila["categoria"]."</td>
-                    </tr>";
-                  }
-              }/*else{
-                echo "<p>0 resultados</p>";
-              }*/
-            ?>
-        </table>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                include("./backend/conexion.php");
+                $sql = "SELECT * FROM compra_tickets";
+                $consulta = mysqli_query($conexion,$sql);
+                if(mysqli_num_rows($consulta)>0){
+                    while($fila=mysqli_fetch_assoc($consulta)){
+                        echo 
+                        "<tr>
+                        <td>".$fila["id"]."</td>
+                        <td>".$fila["nombre"]."</td>
+                        <td>".$fila["apellido"]."</td>
+                        <td>".$fila["email"]."</td>
+                        <td>".$fila["cantidad"]."</td>
+                        <td>".$fila["categoria"]."</td>
+                        <td><a href=\"form-modificar.php?id=" . $fila["id"]."\"><i class='bi bi-pencil-fill'></i></a></td>
+                        <td><a href=\"elimina-ticket.php?id=" . $fila["id"]."\"><i class='bi bi-trash3-fill'></i></a></td>
+                        </tr>";
+                    }
+                }/*else{
+                    echo "<p>0 resultados</p>";
+                }*/
+                ?>
+            </table>
+        </div>
     </div>
   </main>
 <?php
